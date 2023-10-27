@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>CRUD PRODUCTO</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	</head>
+	<body>
+	 <div class="container mt-4">
+		 <div class="col-sm-6">
+			 <form th:action="@{/guardarProducto}" th:object=${producto} method="POST">
+		        <div class="card">
+			         <div class="card-header">
+						<h1>Modulo Producto</h1> 
+					 </div> 
+			         <div class="card-body">
+						 <div class="form-group">
+							 <label>ID</label>
+							 <input th:field="*{idproducto}" type="number" class="form-control">
+						 </div>
+						  <div class="form-group">
+							 <label>PRODUCTO</label>
+							 <input th:field="*{nomProducto}" type="text" class="form-control">
+						 </div>
+						  <div class="form-group">
+							 <label>CATEGORIA</label>
+							 <select th:field="*{Categoria.nomCategoria}" type="text" class="form-select">
+								
+							 </select>
+						 </div>
+						 <div class="form-group">
+							 <label>PROVEEDOR</label>
+							 <select th:field="*{Proveedor.nomProveedor}" type="text" class="form-select">
+								 	    
+							 </select>
+						 </div>
+						  <div class="form-group">
+							 <label>PRECIO</label>
+							 <input th:field="*{precioProducto}" type="decimal" class="form-control">
+						 </div>
+						   <div class="form-group">
+							 <label>STOCK</label>
+							 <input th:field="*{stock}" type="number" class="form-control">
+						 </div>
+						 
+					 </div> 
+			         <div class="card-footer">
+						 <input type="submit" value="Guardar" class="btn btn-success" >
+					 </div> 
+		        </div> 
+			</form>
+		
+		</div>
+	 </div>
+	</body>
+</html>
